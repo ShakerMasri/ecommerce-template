@@ -75,7 +75,7 @@ export const env = createEnv({
     CLOUDINARY_PRODUCT_FOLDER: z
       .string()
       .min(1)
-      .default("loot-corner/products"),
+      .default("ecommerce-template/products"),
   },
 
   client: {},
