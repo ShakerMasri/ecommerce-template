@@ -33,6 +33,8 @@ jobs:
       CLOUDINARY_API_KEY: fake-api-key
       CLOUDINARY_API_SECRET: fake-api-secret
       CLOUDINARY_PRODUCT_FOLDER: ecommerce-template/products
+      UPSTASH_REDIS_REST_URL: https://fake-upstash.example.com
+      UPSTASH_REDIS_REST_TOKEN: fake-ci-upstash-token
 
     steps:
       - name: Checkout
