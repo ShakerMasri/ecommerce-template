@@ -42,9 +42,7 @@ if (!baseURL) {
   throw new Error("Missing E2E_BASE_URL in .env.e2e.local.");
 }
 
-const isSafeTarget =
-  baseURL === "https://loot-corner.onrender.com" ||
-  baseURL.startsWith("http://localhost:");
+const isSafeTarget = baseURL.startsWith("http://localhost:");
 
 if (!isSafeTarget) {
   throw new Error(
@@ -64,8 +62,7 @@ export default defineConfig({
     timeout: 10_000,
   },
 
-  retries: baseURL.includes("onrender.com") ? 1 : 0,
-
+  retries: 0,
   reporter: [["list"], ["html", { open: "never" }]],
 
   use: {
