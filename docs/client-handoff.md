@@ -59,6 +59,12 @@ Orders store delivery snapshots, including delivery area and delivery price, so 
 
 If delivery prices need to change, a developer should update the code configuration, test checkout totals, and deploy the change.
 
+## Public Policy Pages
+
+Terms, privacy, shipping, returns, and contact-page policy copy are code-managed in the typed public policy config. This template copy is a placeholder and must be reviewed, replaced, or approved by the client before launch.
+
+Do not publish private client agreements, private service terms, credentials, internal escalation contacts, or provider secrets on public policy pages.
+
 ## Discounts
 
 Discounts are product-level only for now.
@@ -142,6 +148,6 @@ Before launch, review these with the client:
 - customer can place an order
 - admin can confirm an order and stock decreases once
 - delivery prices are correct
-- legal/customer policy pages are acceptable
+- legal/customer policy pages are customized, client-reviewed, and acceptable
 - client understands that delivery pricing is code-managed for now
 - client knows who to contact for technical issues
