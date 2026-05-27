@@ -62,7 +62,7 @@ export const auth = betterAuth({
     sendResetPassword: async ({ user, url }) => {
       await sendAuthEmail({
         to: user.email,
-        subject: "Reset your Loot Corner password",
+        subject: "Reset your Store Template password",
         text: [
           "You requested a password reset.",
           "",
@@ -99,9 +99,9 @@ export const auth = betterAuth({
     sendVerificationEmail: async ({ user, url }) => {
       await sendAuthEmail({
         to: user.email,
-        subject: "Verify your Loot Corner account",
+        subject: "Verify your Store Template account",
         text: [
-          "Welcome to Loot Corner.",
+          "Welcome to Store Template.",
           "",
           "Open this link to verify your email address:",
           url,
@@ -112,7 +112,7 @@ export const auth = betterAuth({
         ].join("\n"),
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-            <h2>Welcome to Loot Corner</h2>
+            <h2>Welcome to Store Template</h2>
             <p>Please verify your email address before signing in.</p>
             <p>
               <a href="${url}"

@@ -1,6 +1,6 @@
 # Client Handoff Guide
 
-This guide explains the day-to-day admin workflow for Loot Corner. It is written for a real store handoff and should be reviewed with the client before launch.
+This guide explains the day-to-day admin workflow for a store built from this ecommerce template. It should be reviewed and customized with each client before launch.
 
 ## Admin Responsibilities
 

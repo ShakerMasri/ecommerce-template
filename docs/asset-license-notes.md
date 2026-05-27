@@ -1,6 +1,6 @@
 # Asset License Notes
 
-This file records asset and media license-review notes for Loot Corner.
+This file records asset and media license-review notes for this ecommerce template.
 
 This is an engineering audit aid, not legal advice.
 
@@ -88,7 +88,7 @@ Decision:
 
 Before handing the project to a real client or launching production:
 
-- Replace or verify `public/favicon.ico`.
+- Verify the original `public/favicon.svg` still matches the client brand or replace it with a client-owned asset.
 - Verify the font license and keep proof.
 - Verify every real product image uploaded to Cloudinary.
 - Remove temporary, test, or demo product images.

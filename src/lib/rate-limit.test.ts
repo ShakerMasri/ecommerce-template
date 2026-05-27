@@ -104,7 +104,7 @@ describe("rateLimit", () => {
     expect(ratelimitConstructor).toHaveBeenCalledWith(
       expect.objectContaining({
         analytics: true,
-        prefix: "loot-corner:rate-limit:verification-email",
+        prefix: "ecommerce-template:rate-limit:verification-email",
       }),
     );
   });

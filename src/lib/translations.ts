@@ -628,7 +628,7 @@ export type TranslationDictionary = {
 export const translations: Record<Language, TranslationDictionary> = {
   en: {
     brand: {
-      name: "Loot Corner",
+      name: "Store Template",
     },
     nav: {
       home: "Home",
@@ -655,7 +655,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     home: {
       badge: "Simple shopping, clear checkout",
       titleStart: "Find your next pick at",
-      titleBrand: "Loot Corner",
+      titleBrand: "Store Template",
       description:
         "Browse products, add what you like to your cart, and place your order with cash on delivery. Fast, simple, and made for real store usage.",
       flowTitle: "Today's store flow",
@@ -889,7 +889,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       welcomeBackBadge: "Welcome back",
       loginHeroTitle: "Sign in and continue shopping.",
       loginHeroDescription:
-        "Access your cart, checkout, and order history using your Loot Corner account.",
+        "Access your cart, checkout, and order history using your Store Template account.",
       loginTitle: "Login",
       loginDescription: "Enter your email and password to access your account.",
       email: "Email",
@@ -906,7 +906,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       invalidLogin: "Invalid email or password.",
       noAccount: "Don't have an account?",
       createOne: "Create one",
-      registerBadge: "Join Loot Corner",
+      registerBadge: "Join Store Template",
       registerHeroTitle: "Create an account before checkout.",
       registerHeroDescription:
         "Your account lets you save your cart, place orders, and view order history.",
@@ -1048,12 +1048,12 @@ export const translations: Record<Language, TranslationDictionary> = {
         terms: {
           title: "Terms of Use",
           description:
-            "These terms explain the basic rules for using Loot Corner, creating an account, and placing cash-on-delivery orders.",
+            "These terms explain the basic rules for using this store, creating an account, and placing cash-on-delivery orders.",
           sections: [
             {
               title: "1. About the store",
               paragraphs: [
-                "Loot Corner is an online store for physical products including action figures, flags, posters, retro consoles, CDs, keychains, patches, and similar items.",
+                "This store sells physical products. Product categories, delivery rules, and legal wording must be reviewed and customized before each client launch.",
               ],
             },
             {
