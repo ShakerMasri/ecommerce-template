@@ -7,7 +7,7 @@ import { Header } from "~/components/layout/Header";
 import { AppPreferencesProvider } from "~/components/providers/AppPreferencesProvider";
 
 export const metadata: Metadata = {
-  title: "Loot Corner",
+  title: "Store Template",
   description:
     "A simple ecommerce store for browsing products and placing orders.",
   icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],

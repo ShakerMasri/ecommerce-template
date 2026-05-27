@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LegalPolicyClient } from "~/components/legal/LegalPolicyClient";
 
 export const metadata: Metadata = {
-  title: "Returns and Refunds Policy | Loot Corner",
-  description: "Return and refund rules for Loot Corner orders.",
+  title: "Returns and Refunds Policy | Store Template",
+  description: "Return and refund rules for store orders.",
 };
 
 export default function ReturnsPage() {

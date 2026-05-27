@@ -7,7 +7,7 @@ import { useAppPreferences } from "~/components/providers/AppPreferencesProvider
 import { authClient } from "~/lib/auth-client";
 
 const RESEND_VERIFICATION_COOLDOWN_SECONDS = 60;
-const RESEND_VERIFICATION_STORAGE_KEY = "loot-corner-verification-cooldown";
+const RESEND_VERIFICATION_STORAGE_KEY = "ecommerce-template-verification-cooldown";
 
 type AccountClientProps = {
   user: {
