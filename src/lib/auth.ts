@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { env } from "~/env";
+import { storeConfig } from "~/config/store";
 import { prisma } from "~/lib/prisma";
 import { sendAuthEmail } from "~/server/email";
 
@@ -62,7 +63,7 @@ export const auth = betterAuth({
     sendResetPassword: async ({ user, url }) => {
       await sendAuthEmail({
         to: user.email,
-        subject: "Reset your Store Template password",
+        subject: `Reset your ${storeConfig.name} password`,
         text: [
           "You requested a password reset.",
           "",
@@ -99,9 +100,9 @@ export const auth = betterAuth({
     sendVerificationEmail: async ({ user, url }) => {
       await sendAuthEmail({
         to: user.email,
-        subject: "Verify your Store Template account",
+        subject: `Verify your ${storeConfig.name} account`,
         text: [
-          "Welcome to Store Template.",
+          `Welcome to ${storeConfig.name}.`,
           "",
           "Open this link to verify your email address:",
           url,
@@ -112,7 +113,7 @@ export const auth = betterAuth({
         ].join("\n"),
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-            <h2>Welcome to Store Template</h2>
+            <h2>Welcome to ${storeConfig.name}</h2>
             <p>Please verify your email address before signing in.</p>
             <p>
               <a href="${url}"

@@ -4,12 +4,12 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Footer } from "~/components/layout/Footer";
 import { Header } from "~/components/layout/Header";
+import { storeConfig } from "~/config/store";
 import { AppPreferencesProvider } from "~/components/providers/AppPreferencesProvider";
 
 export const metadata: Metadata = {
-  title: "Store Template",
-  description:
-    "A simple ecommerce store for browsing products and placing orders.",
+  title: storeConfig.metadata.title,
+  description: storeConfig.metadata.description,
   icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
 };
 

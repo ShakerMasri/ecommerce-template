@@ -1,4 +1,11 @@
+import { storeConfig } from "~/config/store";
+
 export type Language = "en" | "ar";
+
+const englishStoreName = storeConfig.locales.en.name;
+const arabicStoreName = storeConfig.locales.ar.name;
+const supportPhone = storeConfig.contact.phoneDisplay;
+const supportEmail = storeConfig.contact.supportEmail;
 
 export type LegalPageKey =
   | "terms"
@@ -628,7 +635,7 @@ export type TranslationDictionary = {
 export const translations: Record<Language, TranslationDictionary> = {
   en: {
     brand: {
-      name: "Store Template",
+      name: englishStoreName,
     },
     nav: {
       home: "Home",
@@ -655,7 +662,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     home: {
       badge: "Simple shopping, clear checkout",
       titleStart: "Find your next pick at",
-      titleBrand: "Store Template",
+      titleBrand: englishStoreName,
       description:
         "Browse products, add what you like to your cart, and place your order with cash on delivery. Fast, simple, and made for real store usage.",
       flowTitle: "Today's store flow",
@@ -889,7 +896,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       welcomeBackBadge: "Welcome back",
       loginHeroTitle: "Sign in and continue shopping.",
       loginHeroDescription:
-        "Access your cart, checkout, and order history using your Store Template account.",
+        `Access your cart, checkout, and order history using your ${englishStoreName} account.`,
       loginTitle: "Login",
       loginDescription: "Enter your email and password to access your account.",
       email: "Email",
@@ -906,7 +913,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       invalidLogin: "Invalid email or password.",
       noAccount: "Don't have an account?",
       createOne: "Create one",
-      registerBadge: "Join Store Template",
+      registerBadge: `Join ${englishStoreName}`,
       registerHeroTitle: "Create an account before checkout.",
       registerHeroDescription:
         "Your account lets you save your cart, place orders, and view order history.",
@@ -1104,7 +1111,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "8. Contact",
               paragraphs: [
-                "For questions about orders or these terms, contact us by WhatsApp or phone at +972594022010.",
+                `For questions about orders or these terms, contact us by WhatsApp or phone at ${supportPhone}.`,
               ],
             },
           ],
@@ -1169,7 +1176,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "7. Contact",
               paragraphs: [
-                "To ask about privacy or request help with your account, contact us by WhatsApp or phone at +972594022010.",
+                `To ask about privacy or request help with your account, contact us by WhatsApp or phone at ${supportPhone}.`,
               ],
             },
           ],
@@ -1252,7 +1259,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "5. How to request help",
               paragraphs: [
-                "Contact us by WhatsApp or phone at +972594022010 and include your order details, photos if the product is damaged, and a clear explanation of the issue.",
+                `Contact us by WhatsApp or phone at ${supportPhone} and include your order details, photos if the product is damaged, and a clear explanation of the issue.`,
               ],
             },
           ],
@@ -1265,8 +1272,8 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "Contact details",
               items: [
-                "WhatsApp / Phone: +972594022010.",
-                "Support email: Not available yet.",
+                `WhatsApp / Phone: ${supportPhone}.`,
+                `Support email: ${supportEmail}.`,
                 "Support hours: Support requests are handled as soon as reasonably possible during normal working days.",
               ],
             },
@@ -1561,7 +1568,7 @@ export const translations: Record<Language, TranslationDictionary> = {
   },
   ar: {
     brand: {
-      name: "لوت كورنر",
+      name: arabicStoreName,
     },
     nav: {
       home: "الرئيسية",
@@ -1588,7 +1595,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     home: {
       badge: "تسوق بسيط ودفع واضح",
       titleStart: "اعثر على اختيارك القادم في",
-      titleBrand: "لوت كورنر",
+      titleBrand: arabicStoreName,
       description:
         "تصفح المنتجات، أضف ما يعجبك إلى السلة، ثم أكمل طلبك مع الدفع عند الاستلام. تجربة بسيطة وسريعة ومناسبة لمتجر حقيقي.",
       flowTitle: "خطوات الشراء",
@@ -1815,7 +1822,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       welcomeBackBadge: "مرحباً بعودتك",
       loginHeroTitle: "سجل الدخول وتابع التسوق.",
       loginHeroDescription:
-        "ادخل إلى السلة والدفع وسجل الطلبات باستخدام حسابك في لوت كورنر.",
+        `ادخل إلى السلة والدفع وسجل الطلبات باستخدام حسابك في ${arabicStoreName}.`,
       loginTitle: "تسجيل الدخول",
       loginDescription: "أدخل البريد الإلكتروني وكلمة المرور للوصول إلى حسابك.",
       email: "البريد الإلكتروني",
@@ -1832,7 +1839,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       invalidLogin: "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
       noAccount: "ليس لديك حساب؟",
       createOne: "أنشئ حساباً",
-      registerBadge: "انضم إلى لوت كورنر",
+      registerBadge: `انضم إلى ${arabicStoreName}`,
       registerHeroTitle: "أنشئ حساباً قبل الدفع.",
       registerHeroDescription:
         "حسابك يساعدك على حفظ السلة، إنشاء الطلبات، ومتابعة سجل الطلبات.",
@@ -1972,12 +1979,12 @@ export const translations: Record<Language, TranslationDictionary> = {
         terms: {
           title: "شروط الاستخدام",
           description:
-            "توضح هذه الشروط القواعد الأساسية لاستخدام لوت كورنر، إنشاء الحسابات، وإنشاء طلبات الدفع عند الاستلام.",
+            `توضح هذه الشروط القواعد الأساسية لاستخدام ${arabicStoreName}، إنشاء الحسابات، وإنشاء طلبات الدفع عند الاستلام.`,
           sections: [
             {
               title: "1. عن المتجر",
               paragraphs: [
-                "لوت كورنر هو متجر إلكتروني لبيع منتجات فعلية مثل المجسمات، الأعلام، البوسترات، أجهزة الألعاب القديمة، الأقراص، علاقات المفاتيح، الباتشات ومنتجات مشابهة.",
+                `${arabicStoreName} هو متجر إلكتروني لبيع منتجات فعلية مثل المجسمات، الأعلام، البوسترات، أجهزة الألعاب القديمة، الأقراص، علاقات المفاتيح، الباتشات ومنتجات مشابهة.`,
               ],
             },
             {
@@ -2028,7 +2035,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "8. التواصل",
               paragraphs: [
-                "للاستفسار عن الطلبات أو هذه الشروط، يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم +972594022010.",
+                `للاستفسار عن الطلبات أو هذه الشروط، يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم ${supportPhone}.`,
               ],
             },
           ],
@@ -2091,7 +2098,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "7. التواصل",
               paragraphs: [
-                "للاستفسار عن الخصوصية أو طلب المساعدة بخصوص الحساب، يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم +972594022010.",
+                `للاستفسار عن الخصوصية أو طلب المساعدة بخصوص الحساب، يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم ${supportPhone}.`,
               ],
             },
           ],
@@ -2174,7 +2181,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "5. طريقة طلب المساعدة",
               paragraphs: [
-                "للتواصل، استخدم واتساب أو الهاتف على الرقم +972594022010 مع إرسال تفاصيل الطلب وصور المنتج إن كان تالفاً وشرح واضح للمشكلة.",
+                `للتواصل، استخدم واتساب أو الهاتف على الرقم ${supportPhone} مع إرسال تفاصيل الطلب وصور المنتج إن كان تالفاً وشرح واضح للمشكلة.`,
               ],
             },
           ],
@@ -2187,8 +2194,8 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "بيانات التواصل",
               items: [
-                "واتساب / هاتف: +972594022010.",
-                "البريد الإلكتروني للدعم: غير متوفر حالياً.",
+                `واتساب / هاتف: ${supportPhone}.`,
+                `البريد الإلكتروني للدعم: ${supportEmail}.`,
                 "ساعات الدعم: يتم التعامل مع طلبات الدعم في أقرب وقت ممكن خلال أيام العمل العادية.",
               ],
             },

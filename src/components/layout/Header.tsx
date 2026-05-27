@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAppPreferences } from "~/components/providers/AppPreferencesProvider";
+import { storeConfig } from "~/config/store";
 
 const navLinks = [
   { href: "/", key: "home" },
@@ -17,14 +18,15 @@ export function Header() {
   const { theme, language, t, toggleTheme, toggleLanguage } =
     useAppPreferences();
 
+  const brand =
+    language === "ar" ? storeConfig.locales.ar : storeConfig.locales.en;
+
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="text-lg font-black tracking-tight">
-          <span>{language === "ar" ? "لوت" : "Loot"}</span>
-          <span className="text-orange-600">
-            {language === "ar" ? " كورنر" : "Corner"}
-          </span>
+          <span>{brand.logoStart}</span>
+          <span className="text-orange-600">{brand.logoAccent}</span>
         </Link>
 
         <nav className="hidden items-center gap-5 text-sm font-medium text-zinc-700 md:flex dark:text-zinc-300">
