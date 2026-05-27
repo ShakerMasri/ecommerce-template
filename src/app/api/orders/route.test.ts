@@ -180,6 +180,7 @@ describe("customer order route", () => {
     expect(mocks.tx.order.create).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
+          deliveryAreaKey: "west_bank_cities",
           items: expect.objectContaining({
             create: [
               expect.objectContaining({
@@ -193,5 +194,25 @@ describe("customer order route", () => {
         }),
       }),
     );
+
+    const createPayload = mocks.tx.order.create.mock.calls[0]?.[0];
+
+    expect(createPayload?.data.deliveryPrice.toString()).toBe("20");
+    expect(createPayload?.data.totalAmount.toString()).toBe("100");
+  });
+
+  it("rejects client-supplied delivery prices", async () => {
+    const response = await POST(
+      createRequest({
+        ...createOrderInput(),
+        deliveryPrice: 0,
+      }),
+    );
+    const body = (await response.json()) as { message: string };
+
+    expect(response.status).toBe(400);
+    expect(body.message).toBe("Invalid order request.");
+    expect(mocks.prisma.$transaction).not.toHaveBeenCalled();
+    expect(mocks.tx.order.create).not.toHaveBeenCalled();
   });
 });

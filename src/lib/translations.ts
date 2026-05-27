@@ -1,4 +1,10 @@
 import { storeConfig } from "~/config/store";
+import {
+  getDeliveryAreaLabels,
+  getDeliveryCurrencyLabel,
+  getFreeDeliveryLabel,
+  type DeliveryAreaKey,
+} from "~/lib/delivery";
 
 export type Language = "en" | "ar";
 
@@ -14,12 +20,7 @@ export type LegalPageKey =
   | "returns"
   | "contact";
 
-export type DeliveryAreaTranslationKey =
-  | "nablus_receive_point"
-  | "west_bank_cities"
-  | "jerusalem"
-  | "lands_48"
-  | "west_jerusalem_area";
+export type DeliveryAreaTranslationKey = DeliveryAreaKey;
 
 export type LegalSection = {
   title: string;
@@ -819,28 +820,9 @@ export const translations: Record<Language, TranslationDictionary> = {
         "Please agree or coordinate with the store owner on WhatsApp before choosing the Nablus receive point.",
     },
     delivery: {
-      currency: "NIS",
-      free: "Free",
-      areas: {
-        nablus_receive_point: {
-          label: "Nablus receive point",
-          note: "Free receive/pickup option in Nablus. The customer must agree or coordinate with the store owner on WhatsApp before receiving the order.",
-          agreementLabel:
-            "I understand this is a free receive/pickup option in Nablus and I must agree or coordinate with the store owner on WhatsApp before receiving the order.",
-        },
-        west_bank_cities: {
-          label: "West Bank cities",
-        },
-        jerusalem: {
-          label: "Jerusalem",
-        },
-        lands_48: {
-          label: "48 lands",
-        },
-        west_jerusalem_area: {
-          label: "West Jerusalem, Ein Rafa, Ein Naqouba, Abu Ghosh",
-        },
-      },
+      currency: getDeliveryCurrencyLabel("en"),
+      free: getFreeDeliveryLabel("en"),
+      areas: getDeliveryAreaLabels("en"),
     },
     orders: {
       badge: "Account",
@@ -1746,28 +1728,9 @@ export const translations: Record<Language, TranslationDictionary> = {
         "يرجى الموافقة أو التنسيق مع صاحب المتجر عبر واتساب قبل اختيار نقطة الاستلام في نابلس.",
     },
     delivery: {
-      currency: "شيكل",
-      free: "مجاني",
-      areas: {
-        nablus_receive_point: {
-          label: "نقطة استلام في نابلس",
-          note: "خيار استلام مجاني في نابلس. يجب على الزبون الموافقة أو التنسيق مع صاحب المتجر عبر واتساب قبل استلام الطلب.",
-          agreementLabel:
-            "أفهم أن هذا خيار استلام مجاني في نابلس ويجب أن أوافق أو أنسق مع صاحب المتجر عبر واتساب قبل استلام الطلب.",
-        },
-        west_bank_cities: {
-          label: "مدن الضفة الغربية",
-        },
-        jerusalem: {
-          label: "القدس",
-        },
-        lands_48: {
-          label: "أراضي 48",
-        },
-        west_jerusalem_area: {
-          label: "غرب القدس، عين رافا، عين نقوبا، أبو غوش",
-        },
-      },
+      currency: getDeliveryCurrencyLabel("ar"),
+      free: getFreeDeliveryLabel("ar"),
+      areas: getDeliveryAreaLabels("ar"),
     },
     orders: {
       badge: "الحساب",

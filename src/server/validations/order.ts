@@ -31,6 +31,7 @@ export const createOrderSchema = z
 
     pickupAgreementAccepted: z.boolean().optional().default(false),
   })
+  .strict()
   .superRefine((data, ctx) => {
     const deliveryArea = getDeliveryAreaByKey(data.deliveryAreaKey);
 

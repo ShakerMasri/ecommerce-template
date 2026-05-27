@@ -33,6 +33,15 @@ describe("order validations", () => {
     expect(result.success).toBe(false);
   });
 
+  it("rejects client-supplied delivery prices", () => {
+    const result = createOrderSchema.safeParse({
+      ...baseOrderInput,
+      deliveryPrice: 0,
+    });
+
+    expect(result.success).toBe(false);
+  });
+
   it("requires a delivery address for paid delivery areas", () => {
     const result = createOrderSchema.safeParse({
       ...baseOrderInput,

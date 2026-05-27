@@ -231,6 +231,8 @@ export async function POST(request: Request) {
         return sum.plus(effectivePrice.mul(item.quantity));
       }, new Prisma.Decimal(0));
 
+      // The browser sends only the delivery area key. Price comes from
+      // server-side config so customers cannot lower delivery costs in devtools.
       const deliveryPrice = new Prisma.Decimal(deliveryArea.priceNis);
       const totalAmount = productsTotalAmount.plus(deliveryPrice);
 

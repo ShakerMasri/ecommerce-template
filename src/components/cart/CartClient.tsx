@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { OptimizedImage } from "~/components/ui/OptimizedImage";
 import { useAppPreferences } from "~/components/providers/AppPreferencesProvider";
 import {
+  DEFAULT_DELIVERY_AREA_KEY,
   DELIVERY_AREAS,
   formatDeliveryPriceNis,
   getDeliveryAreaByKey,
@@ -86,7 +87,7 @@ type DeliveryFormState = {
 };
 
 const defaultDeliveryForm: DeliveryFormState = {
-  deliveryAreaKey: "west_bank_cities",
+  deliveryAreaKey: DEFAULT_DELIVERY_AREA_KEY,
   deliveryCity: "",
   deliveryAddress: "",
   deliveryNotes: "",
