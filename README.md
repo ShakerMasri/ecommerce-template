@@ -39,6 +39,7 @@ Completed:
 - Admin category management page and safe category deletion
 - Checkout delivery area selection, delivery price snapshot, and confirmation dialog
 - Public legal/customer pages and footer legal links
+- Public typed store, delivery, and contact/support config layers for client-safe customization
 - CSRF / same-origin checks on protected mutation routes
 - Prisma migration-based database workflow
 - Environment validation through `src/env.js`
@@ -91,6 +92,7 @@ Planned next checkpoints:
 - Select delivery area / receive option during checkout
 - Review product total, delivery price, and final total before confirming an order
 - Receive a post-order message explaining that the store owner will confirm the order by WhatsApp or phone
+- View public contact/support details from the shared contact config
 - View own orders, including delivery details
 - View and update profile information
 
@@ -785,6 +787,16 @@ feature branch -> pull request -> main -> deployment -> version tag
 
 ## Current Business Logic Notes
 
+### Template Configuration
+
+Public client-safe template values live in typed config files:
+
+- `src/config/store.ts` for public store name, description, metadata, and localized logo text.
+- `src/config/delivery.ts` for delivery areas, prices, labels, defaults, and receive/pickup-point rules.
+- `src/config/contact.ts` for public support email, phone, WhatsApp, support hours, footer contact display, contact-page text, and public social links.
+
+Only public display values belong in these files. Secrets, SMTP credentials, OAuth credentials, database URLs, private webhooks, and internal admin-only contacts must stay out of source code and in the correct server-side environment/secrets system.
+
 ### Checkout and Delivery
 
 Delivery areas/prices currently live in code configuration, not in an admin-editable database table.
@@ -863,7 +875,7 @@ After changes are tested:
 npm run check
 npm run build
 git status
-git add .
+git add path/to/changed-file path/to/another-changed-file
 git commit -m "clear commit message"
 git push -u origin feature-name
 ```
@@ -972,7 +984,7 @@ Before commercial delivery:
 
 ## Project Notes
 
-This app is still being hardened for production. It has passed the checkout delivery, admin category, admin order confirmation, admin filtering, customer stock visibility, product discount, Google sign-in, critical E2E coverage, production-safe API logging, and route error boundary checkpoints, but it should not be treated as fully production-ready until the production environment, launch checklist, staging tests, and client review are complete.
+This app is still being hardened for production. It has passed the typed store/delivery/contact config, checkout delivery, admin category, admin order confirmation, admin filtering, customer stock visibility, product discount, Google sign-in, critical E2E coverage, production-safe API logging, and route error boundary checkpoints, but it should not be treated as fully production-ready until the production environment, launch checklist, staging tests, and client review are complete.
 
 Next safest checkpoints:
 

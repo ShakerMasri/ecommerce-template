@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { LegalPolicyClient } from "~/components/legal/LegalPolicyClient";
+import { contactConfig } from "~/config/contact";
 import { storeConfig } from "~/config/store";
 
 export const metadata: Metadata = {
   title: `Contact | ${storeConfig.name}`,
-  description: "Contact the store for order and support questions.",
+  description: contactConfig.contactPage.description.en,
 };
 
 export default function ContactPage() {
