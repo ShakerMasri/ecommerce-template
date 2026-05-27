@@ -34,9 +34,9 @@ type DeliveryConfigDefinition<TAreas extends readonly DeliveryAreaConfig[]> = {
   areas: TAreas;
 };
 
-function defineDeliveryConfig<const TAreas extends readonly DeliveryAreaConfig[]>(
-  config: DeliveryConfigDefinition<TAreas>,
-) {
+function defineDeliveryConfig<
+  const TAreas extends readonly DeliveryAreaConfig[],
+>(config: DeliveryConfigDefinition<TAreas>) {
   return config;
 }
 
