@@ -1,4 +1,4 @@
-# Testing Guide - Loot Corner
+# Testing Guide - Ecommerce Template
 
 Your project uses **Vitest** + **React Testing Library** for unit/component tests and **Playwright** for E2E browser tests.
 
@@ -63,7 +63,7 @@ Create this local-only file:
 Required values:
 
 ```env
-E2E_BASE_URL="https://loot-corner.onrender.com"
+E2E_BASE_URL="http://localhost:3000"
 
 E2E_CUSTOMER_EMAIL="test-customer@example.com"
 E2E_CUSTOMER_PASSWORD="local-test-password"

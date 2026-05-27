@@ -182,7 +182,7 @@ export async function POST(request: Request) {
     }
 
     const folder =
-      process.env.CLOUDINARY_PRODUCT_FOLDER ?? "loot-corner/products";
+      process.env.CLOUDINARY_PRODUCT_FOLDER ?? "ecommerce-template/products";
 
     const uploadedImage = await uploadBufferToCloudinary(buffer, folder);
 

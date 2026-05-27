@@ -1,6 +1,6 @@
-# Loot Corner
+# Ecommerce Template
 
-Loot Corner is a full-stack e-commerce web application for selling collectible products such as figures, posters, and accessories.
+Ecommerce Template is a reusable private full-stack e-commerce starter for future client storefronts.
 
 This project is being prepared as a real client-ready application, not just a demo. The backend, authentication, authorization, environment configuration, deployment flow, and production safety checks should be treated seriously before launch.
 
@@ -199,7 +199,7 @@ SMTP_PORT="587"
 SMTP_USER=""
 SMTP_PASSWORD=""
 SMTP_FROM_EMAIL=""
-SMTP_FROM_NAME="Loot Corner"
+SMTP_FROM_NAME="Ecommerce Template"
 
 # Email delivery mode
 # Use "log" for local/staging without real SMTP sending.
@@ -214,7 +214,7 @@ UPSTASH_REDIS_REST_TOKEN=""
 CLOUDINARY_CLOUD_NAME=""
 CLOUDINARY_API_KEY=""
 CLOUDINARY_API_SECRET=""
-CLOUDINARY_PRODUCT_FOLDER="loot-corner/products"
+CLOUDINARY_PRODUCT_FOLDER="ecommerce-template/products"
 ```
 
 For production, use the real deployed HTTPS domain:
@@ -435,7 +435,7 @@ The Docker Compose setup is for local development only.
 Example local database URL:
 
 ```env
-DATABASE_URL="postgresql://loot_corner:loot_corner_dev_password@localhost:5436/loot_corner"
+DATABASE_URL="postgresql://ecommerce_template:ecommerce_template_dev_password@localhost:5436/ecommerce_template"
 ```
 
 Do not use the local Docker database for production.
@@ -515,7 +515,7 @@ Create this local-only file:
 Required values:
 
 ```env
-E2E_BASE_URL="https://loot-corner.onrender.com"
+E2E_BASE_URL="http://localhost:3000"
 
 E2E_CUSTOMER_EMAIL="test-customer@example.com"
 E2E_CUSTOMER_PASSWORD="local-test-password"

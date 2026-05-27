@@ -2,8 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { performance } from "node:perf_hooks";
 
-const DEFAULT_BASE_URL = "https://loot-corner.onrender.com";
-const DEFAULT_PATHS = ["/", "/products", "/products/sansfigure"];
+const DEFAULT_BASE_URL = "http://localhost:3000";
+const DEFAULT_PATHS = ["/", "/products"];
 const DEFAULT_ROUNDS = 5;
 const DEFAULT_CONCURRENCY = 2;
 const DEFAULT_TIMEOUT_MS = 15_000;
@@ -110,13 +110,12 @@ function getBaseURL() {
   const baseURL = process.env.SMOKE_BASE_URL ?? DEFAULT_BASE_URL;
   const url = new URL(baseURL);
 
-  const isSafeStaging = url.origin === "https://loot-corner.onrender.com";
   const isSafeLocalhost =
     url.hostname === "localhost" || url.hostname === "127.0.0.1";
 
-  if (!isSafeStaging && !isSafeLocalhost) {
+  if (!isSafeLocalhost) {
     throw new Error(
-      `Unsafe smoke-load target: ${url.origin}. Only staging or localhost is allowed.`,
+      `Unsafe smoke-load target: ${url.origin}. Only localhost is allowed until this template has its own staging URL.`,
     );
   }
 
@@ -136,7 +135,7 @@ async function fetchWithTiming(baseURL, smokePath, timeoutMs) {
       redirect: "follow",
       signal: controller.signal,
       headers: {
-        "user-agent": "LootCornerSmokeLoad/1.0",
+        "user-agent": "EcommerceTemplateSmokeLoad/1.0",
         accept: "text/html,application/json",
       },
     });
