@@ -39,7 +39,7 @@ Completed:
 - Admin category management page and safe category deletion
 - Checkout delivery area selection, delivery price snapshot, and confirmation dialog
 - Public legal/customer pages and footer legal links
-- Public typed store, delivery, and contact/support config layers for client-safe customization
+- Public typed store, delivery, contact/support, and policy/legal config layers for client-safe customization
 - CSRF / same-origin checks on protected mutation routes
 - Prisma migration-based database workflow
 - Environment validation through `src/env.js`
@@ -794,8 +794,9 @@ Public client-safe template values live in typed config files:
 - `src/config/store.ts` for public store name, description, metadata, and localized logo text.
 - `src/config/delivery.ts` for delivery areas, prices, labels, defaults, and receive/pickup-point rules.
 - `src/config/contact.ts` for public support email, phone, WhatsApp, support hours, footer contact display, contact-page text, and public social links.
+- `src/config/policies.ts` for public terms, privacy, shipping, returns, contact policy copy, last-updated labels, and legal-page footer labels.
 
-Only public display values belong in these files. Secrets, SMTP credentials, OAuth credentials, database URLs, private webhooks, and internal admin-only contacts must stay out of source code and in the correct server-side environment/secrets system.
+Only public display and storefront policy values belong in these files. Secrets, SMTP credentials, OAuth credentials, database URLs, private webhooks, internal admin-only contacts, and private client agreements must stay out of source code and in the correct server-side environment/secrets system. Public policy copy in the template is placeholder text, not legal advice, and must be reviewed/replaced for each client before launch.
 
 ### Checkout and Delivery
 
@@ -984,7 +985,7 @@ Before commercial delivery:
 
 ## Project Notes
 
-This app is still being hardened for production. It has passed the typed store/delivery/contact config, checkout delivery, admin category, admin order confirmation, admin filtering, customer stock visibility, product discount, Google sign-in, critical E2E coverage, production-safe API logging, and route error boundary checkpoints, but it should not be treated as fully production-ready until the production environment, launch checklist, staging tests, and client review are complete.
+This app is still being hardened for production. It has passed the typed store/delivery/contact/policy config, checkout delivery, admin category, admin order confirmation, admin filtering, customer stock visibility, product discount, Google sign-in, critical E2E coverage, production-safe API logging, and route error boundary checkpoints, but it should not be treated as fully production-ready until the production environment, launch checklist, staging tests, and client review are complete.
 
 Next safest checkpoints:
 
