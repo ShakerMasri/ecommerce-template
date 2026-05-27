@@ -1,3 +1,4 @@
+import { contactConfig } from "~/config/contact";
 import { storeConfig } from "~/config/store";
 import {
   getDeliveryAreaLabels,
@@ -10,8 +11,13 @@ export type Language = "en" | "ar";
 
 const englishStoreName = storeConfig.locales.en.name;
 const arabicStoreName = storeConfig.locales.ar.name;
-const supportPhone = storeConfig.contact.phoneDisplay;
-const supportEmail = storeConfig.contact.supportEmail;
+const supportPhone = contactConfig.phone.display;
+const supportWhatsapp = contactConfig.whatsapp.display;
+const supportEmail = contactConfig.email.address;
+const englishSupportHours = contactConfig.supportHours.en;
+const arabicSupportHours = contactConfig.supportHours.ar;
+const englishContactPageDescription = contactConfig.contactPage.description.en;
+const arabicContactPageDescription = contactConfig.contactPage.description.ar;
 
 export type LegalPageKey =
   | "terms"
@@ -56,6 +62,11 @@ export type TranslationDictionary = {
   footer: {
     rights: string;
     description: string;
+    contactTitle: string;
+    whatsapp: string;
+    phone: string;
+    email: string;
+    socialLinks: string;
   };
   home: {
     badge: string;
@@ -659,6 +670,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       rights: "All rights reserved.",
       description:
         "Simple online shopping with cash on delivery and secure server-side order handling.",
+      contactTitle: "Contact",
+      whatsapp: "WhatsApp",
+      phone: "Phone",
+      email: "Email",
+      socialLinks: "Social links",
     },
     home: {
       badge: "Simple shopping, clear checkout",
@@ -1093,7 +1109,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "8. Contact",
               paragraphs: [
-                `For questions about orders or these terms, contact us by WhatsApp or phone at ${supportPhone}.`,
+                `For questions about orders or these terms, contact us by WhatsApp at ${supportWhatsapp}, by phone at ${supportPhone}, or by email at ${supportEmail}.`,
               ],
             },
           ],
@@ -1158,7 +1174,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "7. Contact",
               paragraphs: [
-                `To ask about privacy or request help with your account, contact us by WhatsApp or phone at ${supportPhone}.`,
+                `To ask about privacy or request help with your account, contact us by WhatsApp at ${supportWhatsapp}, by phone at ${supportPhone}, or by email at ${supportEmail}.`,
               ],
             },
           ],
@@ -1241,22 +1257,22 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "5. How to request help",
               paragraphs: [
-                `Contact us by WhatsApp or phone at ${supportPhone} and include your order details, photos if the product is damaged, and a clear explanation of the issue.`,
+                `Contact us by WhatsApp at ${supportWhatsapp}, by phone at ${supportPhone}, or by email at ${supportEmail}. Include your order details, photos if the product is damaged, and a clear explanation of the issue.`,
               ],
             },
           ],
         },
         contact: {
           title: "Contact",
-          description:
-            "Use this page to contact the store about orders, support, returns, or general questions.",
+          description: englishContactPageDescription,
           sections: [
             {
               title: "Contact details",
               items: [
-                `WhatsApp / Phone: ${supportPhone}.`,
+                `WhatsApp: ${supportWhatsapp}.`,
+                `Phone: ${supportPhone}.`,
                 `Support email: ${supportEmail}.`,
-                "Support hours: Support requests are handled as soon as reasonably possible during normal working days.",
+                `Support hours: ${englishSupportHours}`,
               ],
             },
           ],
@@ -1573,6 +1589,11 @@ export const translations: Record<Language, TranslationDictionary> = {
       rights: "جميع الحقوق محفوظة.",
       description:
         "تسوق بسيط مع الدفع عند الاستلام ومعالجة آمنة للطلبات من جهة الخادم.",
+      contactTitle: "التواصل",
+      whatsapp: "واتساب",
+      phone: "الهاتف",
+      email: "البريد الإلكتروني",
+      socialLinks: "روابط التواصل",
     },
     home: {
       badge: "تسوق بسيط ودفع واضح",
@@ -1998,7 +2019,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "8. التواصل",
               paragraphs: [
-                `للاستفسار عن الطلبات أو هذه الشروط، يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم ${supportPhone}.`,
+                `للاستفسار عن الطلبات أو هذه الشروط، يمكنك التواصل معنا عبر واتساب على الرقم ${supportWhatsapp}، أو الهاتف على الرقم ${supportPhone}، أو البريد الإلكتروني ${supportEmail}.`,
               ],
             },
           ],
@@ -2061,7 +2082,7 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "7. التواصل",
               paragraphs: [
-                `للاستفسار عن الخصوصية أو طلب المساعدة بخصوص الحساب، يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم ${supportPhone}.`,
+                `للاستفسار عن الخصوصية أو طلب المساعدة بخصوص الحساب، يمكنك التواصل معنا عبر واتساب على الرقم ${supportWhatsapp}، أو الهاتف على الرقم ${supportPhone}، أو البريد الإلكتروني ${supportEmail}.`,
               ],
             },
           ],
@@ -2144,22 +2165,22 @@ export const translations: Record<Language, TranslationDictionary> = {
             {
               title: "5. طريقة طلب المساعدة",
               paragraphs: [
-                `للتواصل، استخدم واتساب أو الهاتف على الرقم ${supportPhone} مع إرسال تفاصيل الطلب وصور المنتج إن كان تالفاً وشرح واضح للمشكلة.`,
+                `للتواصل، استخدم واتساب على الرقم ${supportWhatsapp}، أو الهاتف على الرقم ${supportPhone}، أو البريد الإلكتروني ${supportEmail}. أرسل تفاصيل الطلب وصور المنتج إن كان تالفاً وشرحاً واضحاً للمشكلة.`,
               ],
             },
           ],
         },
         contact: {
           title: "تواصل معنا",
-          description:
-            "استخدم هذه الصفحة للتواصل مع المتجر بخصوص الطلبات، الدعم، الإرجاع، أو الاستفسارات العامة.",
+          description: arabicContactPageDescription,
           sections: [
             {
               title: "بيانات التواصل",
               items: [
-                `واتساب / هاتف: ${supportPhone}.`,
+                `واتساب: ${supportWhatsapp}.`,
+                `الهاتف: ${supportPhone}.`,
                 `البريد الإلكتروني للدعم: ${supportEmail}.`,
-                "ساعات الدعم: يتم التعامل مع طلبات الدعم في أقرب وقت ممكن خلال أيام العمل العادية.",
+                `ساعات الدعم: ${arabicSupportHours}`,
               ],
             },
           ],

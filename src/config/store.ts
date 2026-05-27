@@ -1,3 +1,5 @@
+import { contactConfig } from "~/config/contact";
+
 /**
  * Public, client-safe store configuration.
  *
@@ -15,11 +17,7 @@ export const storeConfig = {
     description:
       "A simple ecommerce store for browsing products and placing orders.",
   },
-  contact: {
-    supportEmail: "support@example.com",
-    phoneDisplay: "+000000000000",
-    whatsappDisplay: "+000000000000",
-  },
+  contact: contactConfig,
   locales: {
     en: {
       name: "Store Template",

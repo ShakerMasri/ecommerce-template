@@ -8,21 +8,16 @@ const outputPath = resolve(repoRoot, outputName);
 const stagingDir = resolve(repoRoot, ".tmp-template-branding-files");
 
 const filesToZip = [
-  "docs/asset-license-notes.md",
-  "docs/client-handoff.md",
-  "public/favicon.svg",
-  "src/app/layout.tsx",
+  "src/config/store.ts",
   "src/app/contact/page.tsx",
-  "src/app/privacy/page.tsx",
-  "src/app/returns/page.tsx",
-  "src/app/shipping/page.tsx",
-  "src/app/terms/page.tsx",
-  "src/components/account/AccountClient.tsx",
-  "src/lib/auth.ts",
-  "src/lib/rate-limit.ts",
-  "src/lib/rate-limit.test.ts",
+  "src/components/layout/Footer.tsx",
+  "src/components/layout/Header.tsx",
   "src/lib/translations.ts",
-  "tests/e2e/smoke.e2e.ts",
+  "src/app/shipping/page.tsx",
+  "src/app/returns/page.tsx",
+  "src/app/privacy/page.tsx",
+  "src/app/terms/page.tsx",
+  "README.md",
 ];
 
 function fail(message) {
