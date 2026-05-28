@@ -19,11 +19,11 @@ reports/license-inventory.json
 reports/license-inventory.md
 ```
 
-Current generated audit summary:
+Current generated audit summary from the latest attached local report:
 
 ```txt
-Total packages: 616
-ok: 586
+Total packages: 622
+ok: 592
 review: 27
 notice: 2
 unknown: 1

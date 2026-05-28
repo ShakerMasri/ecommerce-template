@@ -743,6 +743,7 @@ Important production rules:
 - [ ] `node_modules` is not committed.
 - [ ] `.next` is not committed.
 - [ ] README is up to date.
+- [ ] First-client setup checklist is complete for this client.
 - [ ] If this commit was deployed as a release, the matching Git tag exists and points to the deployed commit.
 - [ ] Dependency licenses are reviewed before commercial delivery.
 
@@ -967,11 +968,12 @@ Do not use personal Gmail SMTP for production client email. Use a real transacti
 Additional handoff documents live in:
 
 ```txt
+docs/first-client-setup-checklist.md
 docs/client-handoff.md
 docs/production-readiness-checklist.md
 ```
 
-Use these documents during final client review so the client understands what they can safely manage, which environment values must stay private, and which launch checks must pass before real customer traffic.
+Use these documents during first-client setup and final client review so the client-specific configuration stays safe, the client understands what they can manage, environment values stay private, and launch checks pass before real customer traffic.
 
 ## Legal and Licensing Notes
 
@@ -989,8 +991,9 @@ This app is still being hardened for production. It has passed the typed store/d
 
 Next safest checkpoints:
 
-1. Verify Google sign-in on staging/production with exact callback URLs and separate environment secrets.
-2. Complete the production readiness checklist and client handoff guide.
-3. Review caching/performance after launch testing or measured usage shows a real need.
+1. Complete the first-client setup checklist and client-ready template audit.
+2. Verify Google sign-in on staging/production with exact callback URLs and separate environment secrets if OAuth is enabled for the client.
+3. Complete the production readiness checklist and client handoff guide.
+4. Review caching/performance after launch testing or measured usage shows a real need.
 
 Before launch, complete the production deployment checklist, review the handoff docs with the client, and test the full customer and admin flows on the deployed domain.
