@@ -52,12 +52,12 @@ export const contactConfig = {
     href: "mailto:support@example.com",
   },
   phone: {
-    display: "+972599355107",
-    href: "tel:+972599355107",
+    display: "Replace with client phone",
+    href: "tel:+970000000000",
   },
   whatsapp: {
-    display: "+972599355107",
-    href: "https://wa.me/972599355107",
+    display: "Replace with client WhatsApp",
+    href: "https://wa.me/970000000000",
   },
   supportHours: {
     en: "Support requests are handled as soon as reasonably possible during normal working days.",

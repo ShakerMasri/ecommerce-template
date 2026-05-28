@@ -2,6 +2,14 @@
 
 Use this checklist before the first real client launch and before any major production release.
 
+## 0. Client Setup Gate
+
+- [ ] `docs/first-client-setup-checklist.md` is completed for this client.
+- [ ] Client-specific public config has been reviewed.
+- [ ] Client-specific assets and product images have been reviewed for commercial-use rights.
+- [ ] Public policy text has been replaced, reviewed, or explicitly accepted by the client as placeholder-based copy.
+- [ ] No unfinished add-on is advertised as included in the launch package.
+
 ## 1. Source Control
 
 - [ ] Work is merged through a reviewed pull request.

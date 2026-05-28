@@ -1,6 +1,6 @@
 # Client Handoff Guide
 
-This guide explains the day-to-day admin workflow for a store built from this ecommerce template. It should be reviewed and customized with each client before launch.
+This guide explains the day-to-day admin workflow for a store built from this ecommerce template. It should be reviewed and customized with each client before launch. Use `docs/first-client-setup-checklist.md` before this handoff review so client-specific config, assets, policies, and environment setup are already checked.
 
 ## Admin Responsibilities
 
